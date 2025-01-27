@@ -18,8 +18,10 @@ MLX_DIR     = $(LIB_DIR)/minilibx
 
 # Source files and object files
 SRC_FILES   = main.c \
-              err/validate_input.c
-
+              err/validate_input.c \
+							win/init.c \
+							win/exit.c
+								
 OBJ_FILES   = $(SRC_FILES:.c=.o)
 SRCS        = $(addprefix $(SRC_DIR)/, $(SRC_FILES))
 OBJS        = $(addprefix $(OBJ_DIR)/, $(OBJ_FILES))
@@ -27,7 +29,8 @@ OBJS        = $(addprefix $(OBJ_DIR)/, $(OBJ_FILES))
 # Libraries
 LIBFT       = $(LIBFT_DIR)/libft.a
 MLX         = $(MLX_DIR)/libmlx.a
-LDFLAGS     = -L$(LIBFT_DIR) -lft -L$(MLX_DIR) -lmlx -lm -lX11 -lXext
+LDFLAGS     = -L$(LIBFT_DIR) -lft -L$(MLX_DIR) -lmlx -lm \
+              -framework OpenGL -framework AppKit
 
 # Rules
 all: $(NAME)

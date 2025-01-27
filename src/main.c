@@ -7,6 +7,6 @@ int main(int argc, char *argv[])
     printf("Incorrect Number of Args Given\n");
     return (1);
   }
-  is_rt(argv[1]);
-
+  is_rt(argv[1]); 
+  init_win();
 }
