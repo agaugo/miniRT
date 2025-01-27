@@ -3,11 +3,11 @@ NAME        = miniRT
 
 # Compiler and flags
 CC          = gcc
-CFLAGS      = -Wall -Wextra -Werror \
-              -Wno-deprecated-non-prototype \
-              -Wno-deprecated-declarations \
+CFLAGS      = -Wall -Wextra -Werror					\
+              -Wno-deprecated-non-prototype	\
+              -Wno-deprecated-declarations	\
               -DGL_SILENCE_DEPRECATION
-INCLUDES    = -Iincludes -Ilib/libft/includes -Ilib/minilibx
+INCLUDES    = -Iincludes -Ilib/libft/includes -Ilib/minilibx -Isrc/get_next_line
 
 # Directories
 SRC_DIR     = src
@@ -17,10 +17,12 @@ LIBFT_DIR   = $(LIB_DIR)/libft
 MLX_DIR     = $(LIB_DIR)/minilibx
 
 # Source files and object files
-SRC_FILES   = main.c \
-              err/validate_input.c \
-							win/init.c \
-							win/exit.c
+SRC_FILES   = main.c												\
+							gnl/get_next_line.c						\
+							gnl/get_next_line_utils.c			\
+              err/validate_input.c					\
+							win/init.c										\
+							win/exit.c 
 								
 OBJ_FILES   = $(SRC_FILES:.c=.o)
 SRCS        = $(addprefix $(SRC_DIR)/, $(SRC_FILES))
