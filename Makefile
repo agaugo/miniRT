@@ -22,8 +22,13 @@ SRC_FILES   = main.c												\
 							gnl/get_next_line_utils.c			\
               err/validate_input.c					\
 							win/init.c										\
-							win/exit.c 
-								
+							win/exit.c										\
+							mem/mem_utils.c								\
+							prs/read.c										\
+							prs/utils.c										\
+							prs/parse_scene.c							\
+							prs/parse_xyz_rgb.c
+
 OBJ_FILES   = $(SRC_FILES:.c=.o)
 SRCS        = $(addprefix $(SRC_DIR)/, $(SRC_FILES))
 OBJS        = $(addprefix $(OBJ_DIR)/, $(OBJ_FILES))
