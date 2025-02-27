@@ -10,9 +10,9 @@ CFLAGS      = -Wall -Wextra -Werror					\
 INCLUDES    = -Iincludes -Ilib/libft/includes -Ilib/minilibx -Isrc/get_next_line
 
 # Directories
-SRC_DIR     = src
+SRC_DIR     = source
 OBJ_DIR     = obj
-LIB_DIR     = lib
+LIB_DIR     = library
 LIBFT_DIR   = $(LIB_DIR)/libft
 MLX_DIR     = $(LIB_DIR)/minilibx
 
@@ -20,14 +20,15 @@ MLX_DIR     = $(LIB_DIR)/minilibx
 SRC_FILES   = main.c												\
 							gnl/get_next_line.c						\
 							gnl/get_next_line_utils.c			\
-              err/validate_input.c					\
-							win/init.c										\
-							win/exit.c										\
-							mem/mem_utils.c								\
-							prs/read.c										\
-							prs/utils.c										\
-							prs/parse_scene.c							\
-							prs/parse_xyz_rgb.c
+              errors/validate_input.c					\
+							window/init.c										\
+							window/exit.c										\
+							memory/mem_utils.c								\
+							parser/read.c										\
+							parser/utils.c										\
+							parser/parse_scene.c							\
+							parser/parse_xyz_rgb.c						\
+							parser/parse_shape.c
 
 OBJ_FILES   = $(SRC_FILES:.c=.o)
 SRCS        = $(addprefix $(SRC_DIR)/, $(SRC_FILES))
